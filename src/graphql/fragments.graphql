@@ -1,0 +1,34 @@
+fragment UserFull on UserFull {
+  _id
+  username
+  firstName
+  lastName
+  email
+  phoneNumber
+  bio
+  createdAt
+  updatedAt
+}
+
+fragment EventFull on EventFull {
+  id
+  title
+  start
+  end
+  url
+  isPrivate
+  description
+  createdAt
+  updatedAt
+  createdBy {
+    _id
+    username
+  }
+}
+
+fragment Events on Events {
+  totalCount
+  events {
+    ...EventFull
+  }
+}
